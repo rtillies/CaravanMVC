@@ -1,0 +1,26 @@
+﻿@model Wagon
+
+<h1>@Model.Name</h1>
+
+@{
+	<p>
+		@Model.Id | @Model.Name | @Model.NumWheels Wheels | Covered? @Model.IsCovered
+	</p>
+
+	var passengers = Model.Passengers;
+	if (passengers != null && passengers.Count > 0)
+	{
+		<h3>Passengers</h3>
+		<ul>
+			@foreach (var passenger in passengers)
+			{
+				<li>@passenger.Name</li>
+			}
+		</ul>
+	}
+	else
+	{
+		<p>No passengers to display.</p>
+	}
+	<p><a href="/wagons/@Model.Id/passengers/new">Add new Passenger</a></p>
+}
