@@ -22,9 +22,9 @@ namespace CaravanMVC.DataAccess
 
 			modelBuilder.Entity<Passenger>().HasData(
 				new Passenger { Id = 1, Name = "Professor", Age = 28, Destination = "Virginia", WagonId = 1 },
-				new Passenger { Id = 1, Name = "Bella", Age = 22, Destination = "North Carolina", WagonId = 2 },
-				new Passenger { Id = 1, Name = "Seneca", Age = 28, Destination = "Virginia", WagonId = 1 },
-				new Passenger { Id = 1, Name = "Carolyn", Age = 35, Destination = "Virginia", WagonId = 2 }
+				new Passenger { Id = 2, Name = "Bella", Age = 22, Destination = "North Carolina", WagonId = 2 },
+				new Passenger { Id = 3, Name = "Seneca", Age = 28, Destination = "Virginia", WagonId = 1 },
+				new Passenger { Id = 4, Name = "Carolyn", Age = 35, Destination = "Virginia", WagonId = 2 }
 			);
 		}
 
