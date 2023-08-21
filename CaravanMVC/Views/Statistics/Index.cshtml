@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Wagon>
+@{
+    List<string> DestinationList = ViewData["DestinationList"] as List<string>;
+}
+
+<h1>Statistics</h1>
+<h3>Overview</h3>
+
+@if (DestinationList != null && DestinationList.Count > 0)
+{
+    <ul>
+    @foreach(var destination in DestinationList)
+    {
+        <li>@destination</li>
+    }
+    </ul>
+}
+
+
