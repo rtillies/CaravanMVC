@@ -7,5 +7,15 @@
         public int NumWheels { get; set; }
         public bool IsCovered { get; set; }
         public List<Passenger> Passengers { get; set; } = new List<Passenger>();
+
+        public HashSet<string> getDestinationList()
+        {
+            var destinationList = new List<string>();
+            foreach(var passenger in Passengers)
+            {
+                destinationList.Add(passenger.Destination);
+            }
+            return new HashSet<string>(destinationList);
+        }
     }
 }
