@@ -7,7 +7,7 @@
 	<ul>
 		@foreach (var wagon in Model)
 		{
-			<li><a href="/wagons/@wagon.Id">@wagon.Name</a></li>
+			<li><a href="/wagons/@wagon.Id">@wagon.Name</a> | @wagon.Passengers.Count Passengers</li>
 		}
 	</ul>
 }

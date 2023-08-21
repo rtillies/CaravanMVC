@@ -15,12 +15,11 @@ namespace CaravanMVC.Controllers
 
         public IActionResult Index()
         {
-            var wagons = _context.Wagons.ToList();
+            var wagons = _context.Wagons.Include(w => w.Passengers).ToList();
             return View(wagons);
         }
 
 		[Route("wagons/{id:int}")]
-
 		public IActionResult Show(int id)
         {
 			var wagon = _context.Wagons.Include(w => w.Passengers).Where(w => w.Id == id).First();
