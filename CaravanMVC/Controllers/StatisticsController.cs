@@ -24,7 +24,22 @@ namespace CaravanMVC.Controllers
 			}
 			ViewData["DestinationList"] = destinations.Distinct().ToList();
 
-			return View(wagons);
+			int totalAge = 0;
+			int totalPassengers = 0;
+            foreach (var wagon in wagons)
+            {
+				totalAge += wagon.TotalAge();
+				totalPassengers += wagon.Passengers.Count;
+            }
+			var averageAge = totalPassengers > 0 ? totalAge / totalPassengers : 0;
+
+
+            ViewData["TotalAge"] = totalAge;
+            ViewData["TotalPassengers"] = totalPassengers;
+            ViewData["AverageAge"] = averageAge;
+
+
+            return View(wagons);
 		}
 	}
 }

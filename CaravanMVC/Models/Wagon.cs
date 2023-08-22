@@ -17,5 +17,23 @@
             }
             return new HashSet<string>(destinationList);
         }
+
+        public int TotalAge()
+        {  
+            int total = 0;
+            if (Passengers != null && Passengers.Count > 0)
+            {
+                foreach(var passenger in Passengers)
+                {
+                    total += passenger.Age;
+                }
+            }
+            return total;
+        }
+
+        public double AverageAge()
+        {
+            return TotalAge() > 0 ? TotalAge() / Passengers.Count : 0;
+        }
     }
 }
